@@ -29,6 +29,23 @@ def right_justify(s):
         return repeat(" ", MAX_PRINT_LEN - len(s)) + s
     return s
 
+def space_between(s):
+    len_total = len("".join(s))
+    if len(s) == 2 and len_total < MAX_PRINT_LEN:
+        return repeat(" ", MAX_PRINT_LEN - len_total).join(s)
+    elif len(s) == 3 and len_total < MAX_PRINT_LEN:
+        first_spaces = round((MAX_PRINT_LEN - len_total) / 2)
+        second_spaces = MAX_PRINT_LEN - len_total - first_spaces
+        return "{}{}{}{}{}".format(
+            s[0],
+            repeat(" ", first_spaces),
+            s[1],
+            repeat(" ", second_spaces),
+            s[2]
+        )
+
+    return " ".join(s)
+
 def print_ln(l):
     if len(l) <= MAX_PRINT_LEN:
         return l.rstrip()
@@ -55,6 +72,8 @@ def process_line(l):
         l = banner(l[3:].strip())
     elif l.startswith("..."):
         l = line_of(l[3:].strip())
+    elif "|=|" in l:
+        l = space_between(l.strip().split("|=|"))
     return print_ln(l)
 
 

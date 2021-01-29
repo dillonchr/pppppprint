@@ -1,7 +1,7 @@
 import sys
 import math
 
-MAX_PRINT_LEN = 32
+MAX_PRINT_LEN = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else 32
 
 def repeat(s, n):
     return "".join([s for _ in range(int(n))])

@@ -14,7 +14,7 @@ def center(s):
     if s_len < MAX_PRINT_LEN:
         start = math.floor((MAX_PRINT_LEN - s_len) / 2)
         return repeat(" ", start) + s
-    return s
+    return print_ln(s)
 
 def banner(s, banner_char = "="):
     s = " {} ".format(s)
@@ -22,12 +22,12 @@ def banner(s, banner_char = "="):
     if s_len < MAX_PRINT_LEN:
         start = math.floor((MAX_PRINT_LEN - s_len) / 2)
         return repeat("=", start) + s + repeat(banner_char, MAX_PRINT_LEN - s_len - start)
-    return s
+    return print_ln(s)
 
 def right_justify(s):
     if len(s) < MAX_PRINT_LEN:
         return repeat(" ", MAX_PRINT_LEN - len(s)) + s
-    return s
+    return print_ln(s)
 
 def space_between(s):
     len_total = len("".join(s))

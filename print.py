@@ -7,7 +7,7 @@ def repeat(s, n):
     return s * int(n)
 
 def line_of(s = "="):
-    return repeat(s, MAX_PRINT_LEN)
+    return repeat(s, MAX_PRINT_LEN)[0:MAX_PRINT_LEN - 1]
 
 def center(s):
     s_len = len(s)

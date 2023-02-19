@@ -13,7 +13,7 @@ Space|=|Between
 
 ### cat "input file.txt" | python print.py
 ```text
-                    Right Justify
+                   Right Justify
             Centered
 ============ Banner ============
 --------------------------------

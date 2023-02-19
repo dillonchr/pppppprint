@@ -77,6 +77,11 @@ def process_line(l):
     return print_ln(l)
 
 
-for line in sys.stdin:
-    print(process_line(line))
+def process_lines(lines):
+    for line in lines:
+        print(process_line(line))
+
+
+if "__main__" == __name__:
+    process_lines(sys.stdin)
 
